@@ -29,7 +29,7 @@ body{
 }
 
 .screen-text{
-    margin-right:20px;
+    margin-right:35px;
     margin-top: 30px;
     text-align:right;
     color:white;
@@ -55,6 +55,8 @@ button{
     border-radius: 10px;
 }
 
+/*number buttons and period button-------------------------------------------------------------------*/
+
 .button-number,.button-period{
     border-color: rgb(170, 170, 170);
 }
@@ -71,6 +73,47 @@ button{
     border-color: rgb(170, 170, 170);
 }
 
+/*hover 
+--------------------------------------------------------------------------------------------------------*/
+.button-number-hover,.button-period-hover{
+    border-color: rgb(54, 54, 54);
+}
+
+.button-ac-hover,.button-c-hover,.button-special-hover{
+    color: white;
+    background-color: rgb(255, 192, 75);
+    border-color: rgb(54, 54, 54);
+}
+
+.button-operation-hover,.button-equals-hover{
+    color: white;
+    background-color:rgb(112, 164, 194);
+    border-color: rgb(54, 54, 54);
+}
+
+
+/*click
+--------------------------------------------------------------------------------------------------------*/
+.button-number-click,.button-period-click{
+    border-color: rgb(54, 54, 54);
+    background-color: rgb(189, 189, 189);
+}
+
+.button-ac-click,.button-c-click,.button-special-click{
+    color: white;
+    background-color: rgb(184, 139, 55);
+    border-color: rgb(54, 54, 54);
+}
+
+.button-operation-click,.button-equals-click{
+    color: white;
+    background-color:rgb(89, 133, 158);
+    border-color: rgb(54, 54, 54);
+}
+
+
+/*clearfix 
+--------------------------------------------------------------------------------------------------------*/
 .button-row-1:after,.button-row-2:after,.button-row-3:after,.button-row-4:after,.button-row-5:after{
     content: "";
     clear:both;
