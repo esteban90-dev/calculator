@@ -124,10 +124,8 @@ function buildCalArr(p1){
         currentDisp = numString;
     }
     calcDisplay();
-    console.log('currentDisp is ' + currentDisp);
-    console.log('numString is ' + numString);
-    console.log('histDis is ' + histDisp);
 
+    
     lastInput = input;
     cFlag = 0;
 }
@@ -137,6 +135,7 @@ function calculator(p1,p2,p3){
     let operand1;
     let operand2;
     let operator;
+    let result;
 
     operand1 = p1;
     operator = p2;
@@ -145,24 +144,39 @@ function calculator(p1,p2,p3){
     negWrap = 0;
 
     if(operator == '%'){
-        return operand1 % operand2;
+        result = operand1 % operand2;
     }
 
     else if(operator == '/'){
-        return operand1 / operand2;
+        result = operand1 / operand2;
     }
 
     else if (operator == 'x'){
-        return operand1 * operand2;
+        result = operand1 * operand2;
     }
 
     else if (operator == '-'){
-        return operand1 - operand2;
+        result = operand1 - operand2;
     }
 
     else if (operator == '+'){
-        return operand1 + operand2;
+        result = operand1 + operand2;
     }   
+
+
+    result = result.toString();
+
+    if(result.indexOf('.') !== -1){
+        if(result.length - result.indexOf('.') >= 8){
+            result = result.slice(0,result.indexOf('.') + 8);
+        }
+    }
+    
+    result = parseFloat(result);
+    
+
+
+    return result;
 }
 
 //screen display
