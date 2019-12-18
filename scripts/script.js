@@ -35,13 +35,11 @@ function buildCalArr(p1){
     else if(input == '+/-' && calArr.length == 1){
         if(negWrap == 1){
             histDisp = 'negate(' + histDisp + ')';
-            console.log('first part');
         }
         else{
             histDisp = calArr[0].toString();
             histDisp = 'negate(' + histDisp + ')';
             negWrap = 1;
-            console.log('second part');
         }
 
         calArr[0] = calArr[0] * -1;
@@ -181,14 +179,27 @@ function calculator(p1,p2,p3){
 
 //screen display
 function calcDisplay(){
+    //limit # characters to be displayed
+    if(histDisp.length >= 24){
+        histDisp = histDisp.slice(histDisp.length-24,histDisp.length);
+        histDisp = '...' + histDisp;
+    }
+
+    currentDisp = currentDisp.toString();   //make sure currentDisp is a string
+
+    if(currentDisp.length >= 12){
+        currentDisp = currentDisp.slice(currentDisp.length-12,currentDisp.length);
+        currentDisp = '...' + currentDisp;
+    }
+
+    document.querySelector('.screen-history').innerHTML = histDisp;
+
     if((!currentDisp && !numString) || cFlag == 1){
         document.querySelector('.screen-text').innerHTML = '0';
     }
     else{
         document.querySelector('.screen-text').innerHTML = currentDisp;
     }
-    
-    document.querySelector('.screen-history').innerHTML = histDisp;
 }
 
 //Event Listener Functions
